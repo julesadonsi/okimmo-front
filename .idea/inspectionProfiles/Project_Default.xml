@@ -1,0 +1,204 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="282" name="Style Sheets" />
+        <language minSize="399" name="Python" />
+        <language minSize="54" name="TypeScript" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GrazieInspection" enabled="false" level="GRAMMAR_ERROR" enabled_by_default="false" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="width" />
+            <item index="1" class="java.lang.String" itemvalue="class" />
+            <item index="2" class="java.lang.String" itemvalue="readonly" />
+            <item index="3" class="java.lang.String" itemvalue="describedBy" />
+            <item index="4" class="java.lang.String" itemvalue="priority" />
+            <item index="5" class="java.lang.String" itemvalue="style" />
+            <item index="6" class="java.lang.String" itemvalue="id" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="17">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="p" />
+            <item index="7" class="java.lang.String" itemvalue="div" />
+            <item index="8" class="java.lang.String" itemvalue="h5" />
+            <item index="9" class="java.lang.String" itemvalue="hr" />
+            <item index="10" class="java.lang.String" itemvalue="ion-slides" />
+            <item index="11" class="java.lang.String" itemvalue="dashboard-summary" />
+            <item index="12" class="java.lang.String" itemvalue="app-home" />
+            <item index="13" class="java.lang.String" itemvalue="app-root" />
+            <item index="14" class="java.lang.String" itemvalue="swiper-container" />
+            <item index="15" class="java.lang.String" itemvalue="swiper-slide" />
+            <item index="16" class="java.lang.String" itemvalue="app-product-gallery" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="LanguageDetectionInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="3.13" />
+            <item index="1" class="java.lang.String" itemvalue="3.12" />
+            <item index="2" class="java.lang.String" itemvalue="3.11" />
+            <item index="3" class="java.lang.String" itemvalue="3.10" />
+            <item index="4" class="java.lang.String" itemvalue="3.9" />
+            <item index="5" class="java.lang.String" itemvalue="3.8" />
+            <item index="6" class="java.lang.String" itemvalue="3.7" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="aiohappyeyeballs" />
+          <option value="aiohttp" />
+          <option value="aiohttp-retry" />
+          <option value="aiosignal" />
+          <option value="amqp" />
+          <option value="asgiref" />
+          <option value="astroid" />
+          <option value="async-timeout" />
+          <option value="attrs" />
+          <option value="autobahn" />
+          <option value="Automat" />
+          <option value="babel" />
+          <option value="bandit" />
+          <option value="billiard" />
+          <option value="black" />
+          <option value="bleach" />
+          <option value="celery" />
+          <option value="cffi" />
+          <option value="charset-normalizer" />
+          <option value="click-didyoumean" />
+          <option value="click-plugins" />
+          <option value="click-repl" />
+          <option value="constantly" />
+          <option value="cssselect2" />
+          <option value="daphne" />
+          <option value="Django" />
+          <option value="django-cors-headers" />
+          <option value="django-environ" />
+          <option value="django-jazzmin" />
+          <option value="django-prometheus" />
+          <option value="django-upgrade" />
+          <option value="djangorestframework" />
+          <option value="djangorestframework_simplejwt" />
+          <option value="drf-spectacular" />
+          <option value="exceptiongroup" />
+          <option value="flake8" />
+          <option value="flake8-bugbear" />
+          <option value="flake8-docstrings" />
+          <option value="flake8-import-order" />
+          <option value="fonttools" />
+          <option value="frozenlist" />
+          <option value="hyperlink" />
+          <option value="incremental" />
+          <option value="inflection" />
+          <option value="iniconfig" />
+          <option value="isort" />
+          <option value="jsonschema" />
+          <option value="jsonschema-specifications" />
+          <option value="kombu" />
+          <option value="lxml" />
+          <option value="MarkupSafe" />
+          <option value="multidict" />
+          <option value="mypy-extensions" />
+          <option value="numpy" />
+          <option value="packaging" />
+          <option value="pandas" />
+          <option value="pathspec" />
+          <option value="pluggy" />
+          <option value="pre-commit" />
+          <option value="prometheus_client" />
+          <option value="prompt_toolkit" />
+          <option value="propcache" />
+          <option value="psycopg2-binary" />
+          <option value="pyasn1" />
+          <option value="pyasn1_modules" />
+          <option value="pycparser" />
+          <option value="pydocstyle" />
+          <option value="pydyf" />
+          <option value="PyMuPDF" />
+          <option value="pyOpenSSL" />
+          <option value="pyphen" />
+          <option value="pytesseract" />
+          <option value="pytest" />
+          <option value="pytest-django" />
+          <option value="python-docx" />
+          <option value="redis" />
+          <option value="referencing" />
+          <option value="rpds-py" />
+          <option value="sentry-sdk" />
+          <option value="service-identity" />
+          <option value="sqlparse" />
+          <option value="tinycss2" />
+          <option value="tinyhtml5" />
+          <option value="tomli" />
+          <option value="twilio" />
+          <option value="Twisted" />
+          <option value="txaio" />
+          <option value="typing_extensions" />
+          <option value="tzdata" />
+          <option value="uritemplate" />
+          <option value="vine" />
+          <option value="wcwidth" />
+          <option value="weasyprint" />
+          <option value="webencodings" />
+          <option value="whitenoise" />
+          <option value="xmltodict" />
+          <option value="yarl" />
+          <option value="zope.interface" />
+          <option value="zopfli" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N814" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="format" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="object.*" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OKIMMO</string>
+    <string name="login">Se connecter</string>
+    <string name="login_ok_msg">Vous êtes connecté avec succès !</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="token">Token:</string>
+    <string name="session_data">Informations de session</string>
+    <string name="welcome">Bienvenue dans l\'application !</string>
+    <string name="password">Mot de passe</string>
+    <string name="email">Addresse e-mail</string>
+    <string name="login_title">Connexion</string>
+    <string name="forgot_password">Mot de passe oublié</string>
+    <string name="register_title">Inscription</string>
+    <string name="full_name">Nom complet</string>
+    <string name="confirm_password">Confirmer le mot de passe</string>
+    <string name="register">S\'inscrire</string>
+    <string name="already_have_account">Déjà un compte ? Se connecter</string>
+    <string name="create_account">Pas de compte?, créer un compte</string>
+    <string name="logo">Logo</string>
+    <string name="subtitle">Gérer votre bien immobilier en toute securité</string>
+    <string name="google_sign">Continuer avec Google</string>
+    <string name="or">OU</string>
+    <string name="logo_alt">Logo de l\'application</string>
+    <string name="logo_descr">Logo</string>
+    <string name="reversement">Automatique</string>
+    <string name="rever">Reversement</string>
+    <string name="warranty">100% garanti</string>
+    <string name="secure">Sécurisé</string>
+    <string name="todo">TODO</string>
+    <string name="register_subtitle">T</string>
+    <string name="name">Nom et prénom</string>
+</resources>
