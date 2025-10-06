@@ -30,4 +30,12 @@
     <string name="todo">TODO</string>
     <string name="register_subtitle">T</string>
     <string name="name">Nom et prénom</string>
+
+    <string name="menu">Menu</string>
+    <string name="user_avatar">Avatar utilisateur</string>
+    <string name="user_name">Nom d\'utilisateur</string>
+    <string name="user_email">Email utilisateur</string>
+    <string name="profile">Profil</string>
+    <string name="settings">Paramètres</string>
+    <string name="account">Compte</string>
 </resources>

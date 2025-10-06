@@ -2,7 +2,6 @@ package com.example.okimmo.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.okimmo.MainActivity
@@ -13,6 +12,8 @@ import com.example.okimmo.auth.TokenManager
 import com.example.okimmo.databinding.ActivityRegisterBinding
 import com.example.okimmo.model.LoginResponse
 import com.example.okimmo.model.RegisterRequest
+import com.example.okimmo.utils.ToastHelper
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
 class RegisterActivity : AppCompatActivity() {
@@ -63,7 +64,9 @@ class RegisterActivity : AppCompatActivity() {
         if (!validateInputs(name, email, password, passwordConfirmation)) {
             return
         }
+
         setLoadingState(true)
+
         lifecycleScope.launch {
             try {
                 val response = authApi.register(RegisterRequest(name, email, password))
@@ -84,23 +87,44 @@ class RegisterActivity : AppCompatActivity() {
     private fun validateInputs(name: String, email: String, password: String, passwordConfirm: String): Boolean {
         when {
             name.isEmpty() || email.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty() -> {
-                showToast("Veuillez remplir tous les champs")
+                ToastHelper.showSnackbar(
+                    binding.root,
+                    "Veuillez remplir tous les champs",
+                    ToastHelper.ToastType.ERROR
+                )
                 return false
             }
             name.length < 2 -> {
-                showToast("Le nom doit contenir au moins 2 caractères")
+                ToastHelper.showSnackbar(
+                    binding.root,
+                    "Le nom doit contenir au moins 2 caractères",
+                    ToastHelper.ToastType.WARNING
+                )
                 return false
             }
             !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
-                showToast("Email invalide")
+                ToastHelper.showSnackbar(
+                    binding.root,
+                    "Email invalide",
+                    ToastHelper.ToastType.ERROR
+                )
                 return false
             }
             password.length < 6 -> {
-                showToast("Le mot de passe doit contenir au moins 6 caractères")
+                ToastHelper.showSnackbar(
+                    binding.root,
+                    "Le mot de passe doit contenir au moins 6 caractères",
+                    ToastHelper.ToastType.WARNING
+                )
                 return false
             }
             password != passwordConfirm -> {
-                showToast("Les deux mots de passe ne correspondent pas")
+                ToastHelper.showSnackbar(
+                    binding.root,
+                    "Les mots de passe ne correspondent pas",
+                    ToastHelper.ToastType.ERROR,
+                    duration = Snackbar.LENGTH_LONG
+                )
                 return false
             }
         }
@@ -116,14 +140,21 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
-
     private fun handleRegisterSuccess(response: LoginResponse) {
         tokenManager.saveTokens(response.token, response.refreshToken)
-        showToast("Inscription réussie")
-        navigateToMain()
+        tokenManager.saveUserInfos(response.user)
+
+        ToastHelper.showSnackbar(
+            binding.root,
+            "Inscription réussie ! Bienvenue ${response.user.name} 🎉",
+            ToastHelper.ToastType.SUCCESS,
+            duration = Snackbar.LENGTH_LONG
+        )
+
+        // Attendre un peu avant de naviguer pour que l'utilisateur voie le message
+        binding.root.postDelayed({
+            navigateToMain()
+        }, 1500)
     }
 
     private fun handleRegisterError(errorCode: Int) {
@@ -135,7 +166,23 @@ class RegisterActivity : AppCompatActivity() {
             500 -> "Erreur serveur"
             else -> "Inscription échouée (Code: $errorCode)"
         }
-        showToast(errorMessage)
+
+        ToastHelper.showSnackbar(
+            binding.root,
+            errorMessage,
+            ToastHelper.ToastType.ERROR,
+            duration = Snackbar.LENGTH_LONG,
+            actionText = if (errorCode == 409) "SE CONNECTER" else "RÉESSAYER"
+        ) {
+            if (errorCode == 409) {
+                // Si l'email existe déjà, rediriger vers le login
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            } else {
+                // Sinon réessayer l'inscription
+                performRegister()
+            }
+        }
     }
 
     private fun handleNetworkError(exception: Exception) {
@@ -146,7 +193,16 @@ class RegisterActivity : AppCompatActivity() {
                 "Erreur réseau - Vérifiez votre connexion"
             else -> "Erreur: ${exception.message}"
         }
-        showToast(errorMessage)
+
+        ToastHelper.showSnackbar(
+            binding.root,
+            errorMessage,
+            ToastHelper.ToastType.ERROR,
+            duration = Snackbar.LENGTH_LONG,
+            actionText = "RÉESSAYER"
+        ) {
+            performRegister()
+        }
     }
 
     private fun navigateToMain() {

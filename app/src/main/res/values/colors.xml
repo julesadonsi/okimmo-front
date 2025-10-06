@@ -23,4 +23,14 @@
     <color name="md_theme_dark_onPrimary">#381E72</color>
     <color name="md_theme_dark_background">#1C1B1F</color>
     <color name="md_theme_dark_onBackground">#E6E1E5</color>
+
+    <color name="success_green">#4CAF50</color>
+    <color name="error_red">#F44336</color>
+    <color name="warning_orange">#FF9800</color>
+    <color name="info_blue">#2196F3</color>
+
+    <color name="success_green_dark">#388E3C</color>
+    <color name="error_red_dark">#D32F2F</color>
+    <color name="warning_orange_dark">#F57C00</color>
+    <color name="info_blue_dark">#1976D2</color>
 </resources>
